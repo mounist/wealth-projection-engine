@@ -24,6 +24,8 @@ SEED = 42
 INFLATION_BASE = 0.025
 INFLATION_STRESS_R3 = 0.04
 
+LEGACY_TARGET_REAL = 20_000_000  # locked after Day 1 prototype validation
+
 # Hybrid calibration following standard institutional CMA practice:
 #   - Volatilities and correlations: EMPIRICAL from CRSP over
 #     Bai-Perron windows (these moments are stable features of
@@ -61,5 +63,15 @@ REGIME_PARAMS = {
         "bond_mu_ann": 0.040,       # forward (realized -0.09% is 2022 hike shock artifact)
         "bond_sigma_ann": 0.084,    # empirical
         "correlation": +0.273,      # empirical
+    },
+}
+
+TRANSITION_DURATIONS = {
+    "R1_months": 124,   # observed 2001-01 to 2011-04
+    "R2_months": 93,    # observed 2011-05 to 2019-01
+    "R3_scenarios": {
+        "baseline": 100,   # prior: median of R1/R2
+        "sticky": 200,     # structural shift hypothesis
+        "fragile": 48,     # transient aberration hypothesis
     },
 }
