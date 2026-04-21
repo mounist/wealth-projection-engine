@@ -26,6 +26,17 @@ INFLATION_STRESS_R3 = 0.04
 
 LEGACY_TARGET_REAL = 20_000_000  # locked after Day 1 prototype validation
 
+INITIAL_WEALTH = 20_000_000
+ANNUAL_SPEND_REAL = 500_000
+HORIZON_YEARS = 30
+
+PORTFOLIOS = {
+    "aggressive_80_20":   (0.80, 0.20),
+    "traditional_60_40":  (0.60, 0.40),
+    "moderate_40_60":     (0.40, 0.60),
+    "preservation_25_75": (0.25, 0.75),
+}
+
 # Hybrid calibration following standard institutional CMA practice:
 #   - Volatilities and correlations: EMPIRICAL from CRSP over
 #     Bai-Perron windows (these moments are stable features of

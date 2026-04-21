@@ -1,6 +1,30 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
 .venv/
-artifacts/
-*.log
+venv/
+
+# IDE and tool caches
+.vscode/
+.idea/
 .claude/
+
+# Logs
+*.log
+
+# Data caches and large outputs (track schema in code, not data files)
+artifacts/data/*.parquet
+artifacts/results/*.pkl
+artifacts/results/*.json
+
+# WRDS credentials (NEVER commit)
+*.pgpass
+.pgpass
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
